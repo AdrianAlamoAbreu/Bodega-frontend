@@ -1,7 +1,7 @@
-const Vinos = () => {
+const Cart = () => {
     return (
       <div>About</div>
     )
   }
   
-  export default Vinos
+  export default Cart

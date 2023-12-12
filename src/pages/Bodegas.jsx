@@ -1,7 +1,7 @@
-const Vinos = () => {
+const Bodegas = () => {
     return (
       <div>About</div>
     )
   }
   
-  export default Vinos
+  export default Bodegas
