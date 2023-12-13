@@ -1,0 +1,25 @@
+.titulo-footer {
+    margin-bottom: 1rem; 
+  }
+  
+  .contenido-footer {
+    line-height: 1.6; 
+  }
+  
+  
+  .elemento-footer {
+    margin-bottom: 0.5rem; 
+  }
+  
+.contenido-footer-link {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0; 
+    display: block; 
+    font-size: 0.90rem; 
+  }
+  
+  .contenido-footer-link:hover {
+    text-decoration: underline; 
+  }
+  
