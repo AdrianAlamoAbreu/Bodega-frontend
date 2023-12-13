@@ -21,13 +21,11 @@ import logo from '../../assets/icono_claro.png';
 
 const drawerWidth = 240;
 const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Sobre Nosotros', path: '/about' },
+    { name: 'Inicio', path: '/' },
+    { name: 'Nosotros', path: '/about' },
     { name: 'Vinos', path: '/vinos' },
-    { name: 'Users', path: '/users' },
     { name: 'Bodegas', path: '/bodegas'},
-    { name: 'Reservas', path: '/reservas' },
-    { name: 'Login', path: '/login' }, 
+    { name: 'Reservas', path: '/reservas' }, 
   ];
 
 function DrawerAppBar(props) {
@@ -62,37 +60,38 @@ function DrawerAppBar(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ bgcolor: '#637E51' }}>
-  <Toolbar>
-    <IconButton
-      color="inherit"
-      aria-label="open drawer"
-      edge="start"
-      onClick={handleDrawerToggle}
-      sx={{ mr: 2, display: { sm: 'none' } }}
-    >
-      <MenuIcon />
-    </IconButton>
-    <img src={logo} alt="Logo" style={{ maxWidth: '150px', marginRight: '10px' }} />
-    
-    {/* Aquí van los enlaces a las páginas */}
-    <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-      {navItems.filter(item => item.name !== 'Login' && item.name !== 'Sign Up').map((item) => (
-        <Link key={item.name} to={item.path}>
-          <Button sx={{ color: "#fff" }}>{item.name}</Button>
-        </Link>
-      ))}
-    </Box>
+      <Toolbar>
+  <IconButton
+    color="inherit"
+    aria-label="open drawer"
+    edge="start"
+    onClick={handleDrawerToggle}
+    sx={{ mr: 2, display: { xs: 'block', sm: 'none' } }}
+  >
+    <MenuIcon />
+  </IconButton>
 
-    {/* Botones de Login y Sign Up */}
-    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-      <Link to="/login">
-        <Button sx={{ color: "#fff" }}>Login</Button>
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-start' }}>
+    <img src={logo} alt="Logo" style={{ maxWidth: '150px' }} />
+  </Box>
+
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'center' }}>
+    {navItems.map((item) => (
+      <Link key={item.name} to={item.path} style={{ textDecoration: 'none' }}>
+        <Button sx={{ color: "#fff" }}>{item.name}</Button>
       </Link>
-      <Link to="/signup">
-        <Button sx={{ color: "#fff" }}>Sign Up</Button>
-      </Link>
-    </Box>
-  </Toolbar>
+    ))}
+  </Box>
+
+  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' }}>
+    <Link to="/login" style={{ textDecoration: 'none' }}>
+      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Login</Button>
+    </Link>
+    <Link to="/signup" style={{ textDecoration: 'none' }}>
+      <Button variant="contained" sx={{ marginLeft: 1, backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Sign Up</Button>
+    </Link>
+  </Box>
+</Toolbar>
 </AppBar>
       <nav>
         <Drawer
