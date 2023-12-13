@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import About from "../pages/about.jsx";
+import Home from "../pages/home.jsx";
+import About from "../pages/About.jsx";
 import Users from "../pages/Users.jsx";
 import Root from "../layout/index.jsx";
-import Vinos from "../pages/Vinos.jsx";
-import Adminpage from "../pages/Adminpage.jsx";
-import Reservas from "../pages/Reservas.jsx";
+import Vinos from "../pages/vinos.jsx";
+import Adminpage from "../pages/adminpage.jsx";
+import Reservas from "../pages/reservas/reservas.jsx";
 import Bodegas from "../pages/Bodegas.jsx";
-import Login from "../pages/Login.jsx";
+import Login from "../pages/login.jsx";
 import Cart from "../pages/Cart.jsx";
 
 
