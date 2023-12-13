@@ -99,7 +99,7 @@ function DrawerAppBar(props) {
           {/* Links de navegación centrados en pantallas grandes */}
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, flexGrow: 1, justifyContent: 'center', ml: 2, mr: 2 }}>
             {navItems.map((item) => (
-              <Link key={item.name} to={item.path} style={{ textDecoration: 'none', margin: '0 20px' }}>
+              <Link key={item.name} to={item.path} style={{ textDecoration: 'none', margin: '0 10px' }}>
                 <Button sx={{ color: "#fff" }}>{item.name}</Button>
               </Link>
             ))}
@@ -108,14 +108,15 @@ function DrawerAppBar(props) {
 
 
           {/* Botones de Login y Sign Up a la derecha en pantallas grandes */}
-          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, ml: 'auto' }}>
-            <Link to="/login" style={{ textDecoration: 'none' }}>
-              <Button variant="contained" sx={{ bgcolor: '#FFFFFF', color: '#637E51', mr: 1 }}>Login</Button>
-            </Link>
-            <Link to="/signup" style={{ textDecoration: 'none' }}>
-              <Button variant="contained" sx={{ bgcolor: '#FFFFFF', color: '#637E51' }}>Sign Up</Button>
-            </Link>
-          </Box>
+          <Box sx={{ flexGrow: 1, display: {xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex'
+ }, justifyContent: 'flex-end' }}>
+    <Link to="/login" style={{ textDecoration: 'none' }}>
+      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#FFF7CE" } }}>Login</Button>
+    </Link>
+    <Link to="/signup" style={{ textDecoration: 'none' }}>
+      <Button variant="contained" sx={{ marginLeft: 1, backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Sign Up</Button>
+    </Link>
+  </Box>
         </Toolbar>
       </AppBar>
       <nav>
