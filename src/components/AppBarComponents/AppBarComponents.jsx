@@ -16,7 +16,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import logo from '../../assets/icono_claro.png'; 
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
 const drawerWidth = 240;
@@ -42,7 +43,7 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item.name} disablePadding>
+          <ListItem key={item.name} disablePadding >
             <Link to={item.path}>
              <ListItemButton sx={{ textAlign: 'center' }}>
                <ListItemText primary={item.name} />
@@ -57,42 +58,66 @@ function DrawerAppBar(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: '#637E51' }}>
-      <Toolbar>
-  <IconButton
-    color="inherit"
-    aria-label="open drawer"
-    edge="start"
-    onClick={handleDrawerToggle}
-    sx={{ mr: 2, display: { xs: 'block', sm: 'none' } }}
-  >
-    <MenuIcon />
-  </IconButton>
+        <Box sx={{ display: 'flex' }}>
+          <CssBaseline />
+          <AppBar component="nav" sx={{ bgcolor: '#637E51' }}>
+            <Toolbar>
+              {/* Menú de hamburguesa visible solo en pantallas pequeñas */}
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { xs: 'block', sm: 'flex', xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}
+              >
+                <MenuIcon />
+              </IconButton>
+    
+              {/* Logo centrado en pantallas pequeñas */}
+              <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, justifyContent: 'center' }}>
+                <img src={logo} alt="Logo" style={{ maxWidth: '100px' }} />
+              </Box>
+    
+              {/* Iconos de carrito y login a la derecha en pantallas pequeñas */}
+              <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, ml: 'auto' }}>
+                <IconButton color="inherit">
+                  <ShoppingCartIcon />
+                </IconButton>
+                <IconButton color="inherit">
+                  <AccountCircleIcon />
+                </IconButton>
+              </Box>
 
-  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-start' }}>
-    <img src={logo} alt="Logo" style={{ maxWidth: '150px' }} />
-  </Box>
+              
+           {/* Logo pantallas grandes */}
+              <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, justifyContent: 'left' }}>
+                <img src={logo} alt="Logo" style={{ maxWidth: '130px' }} />
+              </Box>
+              
+                    
 
-  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'center' }}>
-    {navItems.map((item) => (
-      <Link key={item.name} to={item.path} style={{ textDecoration: 'none' }}>
-        <Button sx={{ color: "#fff" }}>{item.name}</Button>
-      </Link>
-    ))}
-  </Box>
+          {/* Links de navegación centrados en pantallas grandes */}
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, flexGrow: 1, justifyContent: 'center', ml: 2, mr: 2 }}>
+            {navItems.map((item) => (
+              <Link key={item.name} to={item.path} style={{ textDecoration: 'none', margin: '0 20px' }}>
+                <Button sx={{ color: "#fff" }}>{item.name}</Button>
+              </Link>
+            ))}
+          </Box>    
 
-  <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' }}>
-    <Link to="/login" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Login</Button>
-    </Link>
-    <Link to="/signup" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ marginLeft: 1, backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Sign Up</Button>
-    </Link>
-  </Box>
-</Toolbar>
-</AppBar>
+
+
+          {/* Botones de Login y Sign Up a la derecha en pantallas grandes */}
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, ml: 'auto' }}>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+              <Button variant="contained" sx={{ bgcolor: '#FFFFFF', color: '#637E51', mr: 1 }}>Login</Button>
+            </Link>
+            <Link to="/signup" style={{ textDecoration: 'none' }}>
+              <Button variant="contained" sx={{ bgcolor: '#FFFFFF', color: '#637E51' }}>Sign Up</Button>
+            </Link>
+          </Box>
+        </Toolbar>
+      </AppBar>
       <nav>
         <Drawer
           container={container}
@@ -110,12 +135,6 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography>
-          
-        </Typography>
-      </Box>
     </Box>
   );
 }
@@ -129,3 +148,4 @@ DrawerAppBar.propTypes = {
 };
 
 export default DrawerAppBar;
+
