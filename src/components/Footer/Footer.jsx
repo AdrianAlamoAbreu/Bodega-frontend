@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <Box sx={{ bgcolor: '#637E51', color: '#FFFFFF', p: 3, textAlign: 'center',
-    width: '100%', position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+    width: '100vw', position: 'relative', bottom: 0, left: 0 }}>
       <Grid container spacing={4}>
         {/* Columna de Contacto */}
         <Grid item xs={12} md={4}>
@@ -38,7 +38,7 @@ const Footer = () => {
         <Grid item xs={12} md={4}>
           <Typography className="titulo-footer" variant="h6">PÁGINAS</Typography>
           <Link to="/" className="contenido-footer-link">Inicio</Link>
-          <Link to="/nosotros" className="contenido-footer-link">Nosotros</Link>
+          <Link to="/About" className="contenido-footer-link">Nosotros</Link>
           <Link to="/vinos" className="contenido-footer-link">Vinos</Link>
           <Link to="/bodegas" className="contenido-footer-link">Bodegas</Link>
           <Link to="/reservas" className="contenido-footer-link">Reservas</Link>

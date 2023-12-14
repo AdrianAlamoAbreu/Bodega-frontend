@@ -90,14 +90,14 @@ function DrawerAppBar(props) {
 
               
            {/* Logo pantallas grandes */}
-              <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, justifyContent: 'left' }}>
+              <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, justifyContent: 'left', paddingLeft:5 }}>
                 <img src={logo} alt="Logo" style={{ maxWidth: '130px' }} />
               </Box>
               
                     
 
           {/* Links de navegación centrados en pantallas grandes */}
-          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, flexGrow: 1, justifyContent: 'center', ml: 2, mr: 2 }}>
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: 0, flexGrow: 3, justifyContent: 'space-between', ml: 20, mr: 10 }}>
             {navItems.map((item) => (
               <Link key={item.name} to={item.path} style={{ textDecoration: 'none', margin: '0 10px' }}>
                 <Button sx={{ color: "#fff" }}>{item.name}</Button>
@@ -105,13 +105,20 @@ function DrawerAppBar(props) {
             ))}
           </Box>    
 
+          <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, ml: '30rem' }}>
+                <IconButton color="inherit" component={Link} to="/Cart">
+                  <ShoppingCartIcon />
+                </IconButton>
+              </Box>
+
+
 
 
           {/* Botones de Login y Sign Up a la derecha en pantallas grandes */}
           <Box sx={{ flexGrow: 1, display: {xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex'
  }, justifyContent: 'flex-end' }}>
     <Link to="/login" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#FFF7CE" } }}>Login</Button>
+      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Login</Button>
     </Link>
     <Link to="/signup" style={{ textDecoration: 'none' }}>
       <Button variant="contained" sx={{ marginLeft: 1, backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Sign Up</Button>
