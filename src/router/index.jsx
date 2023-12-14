@@ -1,14 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/home.jsx";
-import About from "../pages/About.jsx";
+import Home from "../pages/Home.jsx";
+import About from "../pages/About/About.jsx";
 import Users from "../pages/Users.jsx";
 import Root from "../layout/index.jsx";
-import Vinos from "../pages/vinos.jsx";
-import Adminpage from "../pages/adminpage.jsx";
+import Vinos from "../pages/Vinos.jsx";
+import Adminpage from "../pages/Adminpage.jsx";
 import Reservas from "../pages/reservas/reservas.jsx";
+<<<<<<< HEAD
 import Bodegas from "../pages/Bodegas.jsx";
 import Login from "../pages/login/login.jsx";
+=======
+import Bodegas from "../pages/bodegas/Bodegas.jsx";
+import Login from "../pages/Login.jsx";
+>>>>>>> 5372070098e3c2e4313574639bcac52d582d52ca
 import Cart from "../pages/Cart.jsx";
+import Signup from "../pages/signup.jsx";
 
 
 const router = createBrowserRouter([
@@ -51,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
       },
     ],
   },

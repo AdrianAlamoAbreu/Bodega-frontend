@@ -1,0 +1,40 @@
+.about-container {
+    padding: 20px;
+  }
+  
+  .sobrenosotros {
+    text-align: center;
+    padding-bottom: 3rem;
+    padding-top: 10rem;
+  }
+  
+  .about-text {
+    text-align: justify;
+    padding-top: 1rem;
+  }
+  
+  .responsive-img {
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 5rem;
+  }
+  
+  .center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 1.5rem;
+    
+  }
+  
+  .about-button {
+    background-color: #637E51;
+    color: white;
+  }
+  
+  .about-button:hover {
+    background-color: #F8FFFB;
+  }
+
+  
