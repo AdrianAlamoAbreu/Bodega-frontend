@@ -7,7 +7,7 @@ import Vinos from "../pages/vinos.jsx";
 import Adminpage from "../pages/adminpage.jsx";
 import Reservas from "../pages/reservas/reservas.jsx";
 import Bodegas from "../pages/Bodegas.jsx";
-import Login from "../pages/login.jsx";
+import Login from "../pages/login/login.jsx";
 import Cart from "../pages/Cart.jsx";
 
 

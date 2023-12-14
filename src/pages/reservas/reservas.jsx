@@ -2,23 +2,22 @@ import './reservas.css';
 import Calendar from 'react-calendar';
 import { useState } from 'react';
 
-function App() {
-  const [date, setDate] = useState(new Date());
 
+function App() {
+  const [bookings, setBooking] = useState([]) 
+  console.log(bookings)
+  const handleBookings = (value) => {
+    setBooking((prev) => ([...prev, value]))
+  }
   return (
     <div className='app'>
-      <h1 className='text-center'>React Calendar</h1>
+      <h1 className='text-center'>Choose date</h1>
       <div className='calendar-container'>
-        <Calendar onChange={setDate} value={date} />
-      </div>
-      <p className='text-center'>
-        <span className='bold'>Selected Date:</span>{' '}
-        {date.toDateString()}
-      </p>
+        <Calendar onChange={handleBookings} />    
+   </div>
     </div>
-  );
+  );   
 }
-
 const Reservas = () => {
     return (
       <div>{ App()}</div>
