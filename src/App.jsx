@@ -6,8 +6,7 @@ import { SearchContext } from './context/searchContext'
 
 import config from './router'
 
-import { Login } from './pages/login/login'
-import { Register } from './pages/register/register'
+import Register  from './pages/register/register'
 
 import './App.css'
 
@@ -21,7 +20,6 @@ function App() {
       <SearchContext.Provider value={context}>
         <RouterProvider router={ config } />
       </SearchContext.Provider>
-    <Login/>
     </>
   )
 }
