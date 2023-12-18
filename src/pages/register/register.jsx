@@ -100,7 +100,7 @@ export default function signup() {
                   id="number_phone"
                   label="Número de teléfono"
                   name="number_phone"
-                  //autoComplete="Número de telégf"
+                  //autoComplete="Número de teléfono"
                 />
               </Grid>
             </Grid>

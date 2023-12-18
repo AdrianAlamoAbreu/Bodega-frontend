@@ -43,7 +43,6 @@ function App() {
   };
 
   return (
-<<<<<<< HEAD
     <div className="app">
       <h1 className="text-center">Escoge fecha</h1>
       <div className="calendar-container">
@@ -96,14 +95,6 @@ function App() {
           </Button>
         </DialogActions>
       </Dialog>
-=======
-    <div className='app'>
-      <h1 className='text-center'>Reservas</h1>
-      <h1 className='text-center'>Choose date</h1>
-      <div className='calendar-container'>
-        <Calendar onChange={handleBookings} />    
-   </div>
->>>>>>> 181f4e2db459c44a2d85ca4ce813509c1a672ed3
     </div>
   );
 }
