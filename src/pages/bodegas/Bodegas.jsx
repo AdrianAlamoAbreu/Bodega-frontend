@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Grid, Typography, Button } from '@mui/material';
 import { MasonryImageList } from '../../components/bodegascomponents/BodegasComponents';
 import bodega1 from '../../assets/bodega1.png'; 
@@ -20,7 +20,9 @@ import './bodegas.css';
 import { Link } from 'react-router-dom';
 
 
+
 const Bodegas = () => {
+  const [bodegas, setBodegas] = useState([]);
   const images = [
     {img: mansory2v, title: 'Mansory 2'},
     {img: mansory8h, title: 'Mansory 8'},
@@ -35,6 +37,15 @@ const Bodegas = () => {
     {img: mansory12h, title: 'Mansory 12'},
     {img: mansory7v, title: 'Mansory 7'}
   ];
+
+  useEffect(() => {
+    const fetchBodegas = async () => {
+      const data = await getAllBodegas();
+      setBodegas(data);
+    };
+
+    fetchBodegas();
+  }, []);
 
   return (
     <Box sx={{ flexGrow: 1, paddingBottom: 10, paddingLeft:2 }}>

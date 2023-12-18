@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, ButtonGroup, Button, Card, CardActions, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 import { useCart } from '../../context/cartContext';
 import { useNavigate } from 'react-router-dom';
@@ -13,9 +13,19 @@ import tinto4 from '../../assets/tinto4.png';
 import './vinos.css';
 
 const Vinos = () => {
+  const [vino, setVino] = useState([]);
   const [tipoVino, setTipoVino] = React.useState('todos');
   const { anadirCarrito } = useCart();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchVinos = async () => {
+      const data = await getAllWines();
+      setVinos(data);
+    };
+
+    fetchVinos();
+  }, []);
 
 
 

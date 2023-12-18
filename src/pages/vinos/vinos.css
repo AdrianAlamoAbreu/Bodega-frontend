@@ -11,7 +11,7 @@
   }
   
   .vino-card {
-    max-width: 345px; /* Ajusta según tus necesidades */
+    max-width: 345px;
     transition: transform 0.3s ease-in-out;
   }
   
@@ -28,7 +28,6 @@
 
   .center-button {
     display: flex;
-    align: center;
     margin-top: 20px;
     padding-bottom: 1.5rem;
     
