@@ -1,71 +1,100 @@
-import './reservas.css'
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import { Button, Modal, TextField } from '@mui/material';
-import './reservas.css';
+import "./reservas.css";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import TextField from "@mui/material/TextField";
+
+const timeSlots = ["14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00"];
 
 function App() {
   const [bookings, setBookings] = useState([]);
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [timeSlot, setTimeSlot] = useState('');
-  const [numPersons, setNumPersons] = useState('');
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [reservationDetails, setReservationDetails] = useState({
+    timeSlot: "",
+    numberOfPeople: "",
+  });
 
-  const handleBookings = () => {
-    const newBooking = {
-      date: selectedDate.toDateString(),
-      timeSlot,
-      numPersons,
-    };
-    setBookings((prev) => [...prev, newBooking]);
-    setModalOpen(true);
-  };
-
-  const handleDateChange = (value) => {
+  const handleBookings = (value) => {
+    setBookings((prev) => [...prev, value]);
     setSelectedDate(value);
+    setOpenModal(true);
   };
 
-  const handleModalClose = () => {
-    setModalOpen(false);
+  const handleCloseModal = () => {
+    setOpenModal(false);
   };
 
-  const handleDateEntry = () => {
-    setModalOpen(true);
+  const handleReservationDetailsChange = (e) => {
+    const { name, value } = e.target;
+    setReservationDetails((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleConfirmReservation = () => {
+    console.log("Fecha:", selectedDate);
+    console.log("Franja horaria:", reservationDetails.timeSlot);
+    console.log("Número de personas:", reservationDetails.numberOfPeople);
+    setOpenModal(false);
   };
 
   return (
-    <div className='app'>
-      <h1 className='text-center'>Escoge fecha</h1>
-      <div className='calendar-container'>
-        <Calendar onChange={handleDateChange} onClickDay={handleDateEntry} />
+    <div className="app">
+      <h1 className="text-center">Escoge fecha</h1>
+      <div className="calendar-container">
+        <Calendar onChange={handleBookings} />
       </div>
-
-      <Modal open={isModalOpen} onClose={handleModalClose}>
-        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '300px', bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
-          <h2>¡Alerta!</h2>
-          <p>Has escogido una fecha: {selectedDate.toDateString()}</p>
+      <Dialog
+        open={openModal}
+        onClose={handleCloseModal}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          Reservar Franja Horaria
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Por favor, completa los detalles de tu reserva:
+          </DialogContentText>
           <TextField
-            label='Franja horaria'
-            variant='outlined'
-            margin='normal'
             fullWidth
-            onChange={(e) => setTimeSlot(e.target.value)}
-          />
+            margin="normal"
+            select
+            label="Franja Horaria"
+            name="timeSlot"
+            value={reservationDetails.timeSlot}
+            onChange={handleReservationDetailsChange}
+          >
+            {timeSlots.map((slot) => (
+              <option key={slot} value={slot}>
+                {slot}
+              </option>
+            ))}
+          </TextField>
           <TextField
-            label='Número de personas'
-            variant='outlined'
-            margin='normal'
             fullWidth
-            onChange={(e) => setNumPersons(e.target.value)}
+            margin="normal"
+            label="Número de Personas"
+            name="numberOfPeople"
+            type="number"
+            value={reservationDetails.numberOfPeople}
+            onChange={handleReservationDetailsChange}
           />
-          <Button onClick={handleBookings} variant="contained">
-            Reservar
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseModal} color="primary">
+            Cancelar
           </Button>
-          <Button onClick={handleModalClose} variant="contained">
-            Close
+          <Button onClick={handleConfirmReservation} color="primary" autoFocus>
+            Confirmar Reserva
           </Button>
-        </div>
-      </Modal>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
