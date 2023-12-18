@@ -3,12 +3,12 @@ import Home from "../pages/Home.jsx";
 import About from "../pages/About/About.jsx";
 import Users from "../pages/Users.jsx";
 import Root from "../layout/index.jsx";
-import Vinos from "../pages/Vinos.jsx";
+import Vinos from "../pages/vinos/vinos.jsx";
 import Adminpage from "../pages/Adminpage.jsx";
 import Reservas from "../pages/reservas/reservas.jsx";
 import Bodegas from "../pages/bodegas/Bodegas.jsx";
 import Login from "../pages/Login.jsx";
-import Cart from "../pages/Cart.jsx";
+import Cart from "../pages/Cart/Cart.jsx";
 import Signup from "../pages/signup.jsx";
 
 
