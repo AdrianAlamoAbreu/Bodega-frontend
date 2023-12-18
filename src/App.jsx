@@ -4,8 +4,7 @@ import { SearchContext } from './context/searchContext';
 import { CartProvider } from './context/cartContext';
 import config from './router';
 import './App.css';
-import { Login } from './pages/login/login'
-import { Register } from './pages/register/register'
+
 
 
 function App() {

@@ -1,5 +1,7 @@
-export const Login = () => {
+const Login = () => {
     return(
-        <>Login</>
-    )
-}
+      <>Login</>
+    );
+  }
+  
+  export default Login;

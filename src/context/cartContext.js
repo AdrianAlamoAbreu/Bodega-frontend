@@ -36,10 +36,5 @@ export const CartProvider = ({ children }) => {
       });
     });
   };
-
-  return (
-    <CartContext.Provider value={{ cart, anadirCarrito, removerCarrito, actualizarCantidad }}>
-      {children}
-    </CartContext.Provider>
-  );
+  return React.createElement(CartContext.Provider, { value: { cart, anadirCarrito, removerCarrito, actualizarCantidad } }, children)
 };
