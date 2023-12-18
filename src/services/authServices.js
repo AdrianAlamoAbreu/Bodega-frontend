@@ -2,7 +2,6 @@ import app from "./config"
 
 const login = async (body) => {
   try {
-    console.log(body)
     const { data } = await app.post('/auth/login', body)
     localStorage.setItem('token', data.token)
     return 200
