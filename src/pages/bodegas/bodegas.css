@@ -1,13 +1,36 @@
-.about-container {
+.bodegas-page {
+    display: flex;
+    gap: 20px;
     padding: 20px;
   }
   
-  .sobrenosotros {
-    text-align: center;
-    padding-bottom: 3rem;
-    padding-top: 10rem;
+  .masonry-section {
+    flex: 1;
   }
   
+  .text-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+
+  }
+  
+  .tours {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .tours-img {
+    width: 50%;
+  }
+
+  .bodegas {
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 10rem;
+  }
+
   .text {
     text-align: justify;
     padding-top: 2rem;
@@ -17,13 +40,6 @@
     font-size: 1.1rem !important;
   }
   
-  .responsive-img {
-    width: 100%;
-    height: auto;
-    padding-top: 1rem;
-    padding-bottom: 5rem;
-  }
-  
   .center-button {
     display: flex;
     justify-content: center;
@@ -31,14 +47,3 @@
     padding-bottom: 1.5rem;
     
   }
-  
-  .about-button {
-    background-color: #637E51;
-    color: white;
-  }
-  
-  .about-button:hover {
-    background-color: #F8FFFB;
-  }
-
-  

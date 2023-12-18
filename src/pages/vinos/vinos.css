@@ -1,0 +1,35 @@
+.vinos-container {
+    text-align: center;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .vino-card {
+    max-width: 345px; /* Ajusta según tus necesidades */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .vino-card:hover {
+    transform: scale(1.05);
+  }
+
+
+  .vinos {
+    text-align: center;
+    padding-bottom: 3rem;
+    padding-top: 10rem;
+  }
+
+  .center-button {
+    display: flex;
+    align: center;
+    margin-top: 20px;
+    padding-bottom: 1.5rem;
+    
+  }
