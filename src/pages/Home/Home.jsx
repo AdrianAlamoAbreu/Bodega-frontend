@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import './Home.css';
 import imagenBodega from '../../assets/bodega_home.jpg'
-import viñedo from '../../assets/viñedo_home.jpg'
-import tienda from '../../assets/tienda.png'
-import equipo from '../../assets/equipo.png'
+import viñedo from '../../assets/Viñedo_home.jpg'
+import tienda from '../../assets/tienda_enlace.png'
+import equipo from '../../assets/Equipo.png'
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
@@ -28,14 +28,11 @@ const Home = () => {
           </Button>
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <img src={imagenBodega} alt="Imagen Bodega" className="responsive-img" />
-        </Grid>
       </Grid>
 
       <Grid container spacing={3} className="section">
         <Grid item xs={12} md={6}>
-          <img src={vinos} alt="Viñedo" className="responsive-img" />
+        <img src={imagenBodega} alt="Imagen Bodega" className="responsive-img" />
         </Grid>
         <Grid item xs={12} md={6}>
           <Typography variant="body1" className="about-text">

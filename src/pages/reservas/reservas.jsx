@@ -11,7 +11,7 @@ import TextField from "@mui/material/TextField";
 
 const timeSlots = ["14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00"];
 
-function App() {
+function Reservas() {
   const [bookings, setBookings] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -99,8 +99,5 @@ function App() {
   );
 }
 
-const Reservas = () => {
-  return <div>{App()}</div>;
-};
 
 export default Reservas;
