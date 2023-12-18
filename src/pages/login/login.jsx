@@ -16,6 +16,7 @@ import { login, logout } from "../../services/authServices";
 import Logo from "../../assets/icono_verde.png";
 
 const defaultTheme = createTheme();
+
 export default function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -39,16 +40,11 @@ export default function Login() {
             alignItems: "center",
           }}
         >
-          <img src={Logo} width={"100px"}></img>
+          <img src={Logo} width={"100px"} alt="logo" />
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -94,7 +90,7 @@ export default function Login() {
               </Grid>
               <Grid item>
                 <Link href="./signup" variant="body2">
-                  {"¿No tienes un cuenta? Crea una aquí"}
+                  ¿No tienes una cuenta? Crea una aquí
                 </Link>
               </Grid>
             </Grid>
