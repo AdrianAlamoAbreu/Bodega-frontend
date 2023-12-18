@@ -10,6 +10,13 @@ const login = async (body) => {
   }
 }
 
+const logout = () => {
+  // Elimina el token del almacenamiento local al cerrar sesión
+  localStorage.removeItem('token');
+  console.log("Sesión cerrada exitosamente.");
+}
+
 export {
-  login
+  login,
+  logout
 }
