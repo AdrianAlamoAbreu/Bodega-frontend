@@ -86,7 +86,7 @@ const Bodegas = () => {
           Complemente su experiencia en la Bodega Sur con nuestro tour especial. Esta visita guiada de 1 hora le llevará a través de nuestros viñedos soleados, culminando en una degustación selecta de 2 vinos representativos y aceitunas con mojo junto a pan local. Una experiencia auténtica que fusiona el sabor y la tradición del sur de Gran Canaria.
           </Typography>
           <Box className='center-button'>
-          <Button variant='contained' component={Link} to='/reservas' sx={{ backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB' }, margin: '10px 0' }}>          
+          <Button variant='contained' component={Link} to='/reservas' sx={{ backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }, margin: '10px 0' }}>          
           Reserva
           </Button>
           </Box>
@@ -108,7 +108,7 @@ const Bodegas = () => {
           Descubra la frescura del norte en nuestra Bodega Norte con un tour de 1 hora. Pasee por viñedos que se mecen al ritmo del océano Atlántico y participe en una degustación que incluye 2 de nuestros vinos más elegantes, acompañados de deliciosos bocados locales. Una inmersión en la suavidad y el equilibrio que definen nuestros vinos norteños.
           </Typography>
         <Box className='center-button'>
-          <Button variant='contained' component={Link} to='/reservas' sx={{ backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB' }, margin: '10px 0' }}>          
+          <Button variant='contained' component={Link} to='/reservas' sx={{ backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }, margin: '10px 0' }}>          
           Reserva
           </Button>
          </Box>
@@ -129,7 +129,7 @@ const Bodegas = () => {
           <strong>Visita Guiada y Degustación:</strong><br /> <br />
           En la Bodega de Medianías, le invitamos a un recorrido de 1 hora por un paisaje vinícola de temperaturas moderadas y vistas impresionantes. Concluya su visita con una degustación exclusiva de 2 vinos, que reflejan la armonía y riqueza de las medianías, maridados con especialidades regionales. Un deleite para los sentidos que celebra la diversidad y la calidad de nuestros vinos de altura.
        </Typography>
-        <Box>
+        <Box className='center-button'>
           <Button variant='contained' component={Link} to='/reservas' sx={{ backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }, margin: '10px 0' }}>          
           Reserva
           </Button>
