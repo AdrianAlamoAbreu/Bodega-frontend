@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
+
         <Box sx={{paddingTop: 14}}>
           <img src={viñedo} alt="Viñedo" className="responsive-img" />
         <Box>

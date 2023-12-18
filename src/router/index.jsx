@@ -4,12 +4,12 @@ import About from "../pages/About/About.jsx";
 import Users from "../pages/Users.jsx";
 import Root from "../layout/index.jsx";
 import Vinos from "../pages/vinos/vinos.jsx";
-import Adminpage from "../pages/Adminpage.jsx";
+import Adminpage from "../pages/adminpage.jsx";
 import Reservas from "../pages/reservas/reservas.jsx";
 import Login from "../pages/login/login.jsx";
 import Bodegas from "../pages/bodegas/Bodegas.jsx";
 import Cart from "../pages/Cart/Cart.jsx";
-import Signup from "../pages/signup.jsx";
+import Signup from "../pages/register/register.jsx";
 
 
 const router = createBrowserRouter([
