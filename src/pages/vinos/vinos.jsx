@@ -41,16 +41,16 @@ const Vinos = () => {
       { id: 8, imagen: tinto4, nombre: 'Syrah', precio: 28 }
     ],
     blancos: [
-      { id: 1, imagen: blanco1, nombre: 'Listán blanco', descripcion: 'Descripción 1' },
-      { id: 2, imagen: blanco2, nombre: 'Malvasía Volcánica', descripcion: 'Descripción 2' },
-      { id: 3, imagen: blanco3, nombre: 'Vijariego Blanco', descripcion: 'Descripción 3' },
-      { id: 4, imagen: blanco4, nombre: 'Albillo Criollo', descripcion: 'Descripción 4' },
+      { id: 1, imagen: blanco1, nombre: 'Listán blanco', descripcion: 'Descripción 1', precio: 15  },
+      { id: 2, imagen: blanco2, nombre: 'Malvasía Volcánica', descripcion: 'Descripción 2', precio: 25 },
+      { id: 3, imagen: blanco3, nombre: 'Vijariego Blanco', descripcion: 'Descripción 3', precio: 30 },
+      { id: 4, imagen: blanco4, nombre: 'Albillo Criollo', descripcion: 'Descripción 4', precio: 22 },
     ],
     tintos: [
-      { id: 5, imagen: tinto1, nombre: 'Listán Negro', descripcion: 'Descripción 5' },
-      { id: 6, imagen: tinto2, nombre: 'Tempranillo', descripcion: 'Descripción 6' },
-      { id: 7, imagen: tinto3, nombre: 'Tintilla', descripcion: 'Descripción 7' },
-      { id: 8, imagen: tinto4, nombre: 'Syrah', descripcion: 'Descripción 8' }
+      { id: 5, imagen: tinto1, nombre: 'Listán Negro', descripcion: 'Descripción 5', precio: 18 },
+      { id: 6, imagen: tinto2, nombre: 'Tempranillo', descripcion: 'Descripción 6', precio: 25 },
+      { id: 7, imagen: tinto3, nombre: 'Tintilla', descripcion: 'Descripción 7', precio: 35 },
+      { id: 8, imagen: tinto4, nombre: 'Syrah', descripcion: 'Descripción 8', precio: 28 }
     ]
   };
 
