@@ -11,6 +11,17 @@ const login = async (body) => {
   }
 }
 
+const logout = () => {
+  try {
+    localStorage.removeItem('token');
+    console.log("Sesión cerrada con éxito");
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
+
 export {
-  login
+  login,
+  logout
 }
