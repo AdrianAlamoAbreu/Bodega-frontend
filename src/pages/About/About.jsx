@@ -15,7 +15,7 @@ const About = () => {
           </Typography>    
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
-              <Typography variant='body1' gutterBottom className='text'>
+              <Typography variant='body1' className='text'>
           En el corazón vibrante de Gran Canaria, se erige 7 Castrillos, no solo como una bodega sino como un testimonio viviente de una tradición familiar.<br /><br />
           Fundada por los hermanos Castrillo, cuya infancia estuvo inmersa entre viñedos y sueños de vendimias, la bodega es un espejo del amor y la dedicación a la tierra. 
           Cada rincón de nuestras instalaciones cuenta la historia de una familia que, aunque diversa en profesiones, encontró una pasión común en el arte de la vinicultura.<br /> <br />

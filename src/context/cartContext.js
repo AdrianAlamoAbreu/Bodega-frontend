@@ -36,5 +36,6 @@ export const CartProvider = ({ children }) => {
       });
     });
   };
-  return React.createElement(CartContext.Provider, { value: { cart, anadirCarrito, removerCarrito, actualizarCantidad } }, children)
+
+  return React.createElement(CartContext.Provider, { value: { cart, anadirCarrito, removerCarrito, actualizarCantidad }}, children);
 };

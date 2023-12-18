@@ -23,3 +23,18 @@
   .tours-section img {
     width: 50%;
   }
+
+  .home {
+    text-align: center;
+    padding-bottom: 4rem;
+    
+  }
+
+  .text {
+    text-align: justify;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 4rem;
+    font-size: 1.1rem !important;
+  }
