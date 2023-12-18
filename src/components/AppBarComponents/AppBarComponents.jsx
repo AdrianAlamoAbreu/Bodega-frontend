@@ -12,7 +12,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import logo from '../../assets/icono_claro.png'; 
@@ -20,8 +19,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 
-const drawerWidth = 240;
-const navItems = [
+const drawerWidth = 240; /*ancho menú desplegable*/
+const navItems = [        /*rutas*/
     { name: 'Inicio', path: '/' },
     { name: 'Nosotros', path: '/about' },
     { name: 'Vinos', path: '/vinos' },
@@ -31,15 +30,15 @@ const navItems = [
 
 function DrawerAppBar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false); /*visibilidad del menú desplegable en dispositivos móviles*/
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setMobileOpen((prevState) => !prevState);     /*alterna el estado de mobileOpen*/
   };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <img src={logo} alt="Logo" style={{ maxWidth: '100px' }} />
+      <img src={logo} alt='Logo' style={{ maxWidth: '100px' }} />
       <Divider />
       <List>
         {navItems.map((item) => (
@@ -60,13 +59,13 @@ function DrawerAppBar(props) {
   return (
         <Box sx={{ display: 'flex' }}>
           <CssBaseline />
-          <AppBar component="nav" sx={{ bgcolor: '#637E51' }}>
+          <AppBar component='nav' sx={{ bgcolor: '#637E51' }}>
             <Toolbar>
-              {/* Menú de hamburguesa visible solo en pantallas pequeñas */}
+              {/* Burger menu solo en pantallas pequeñas */}
               <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
+                color='inherit'
+                aria-label='open drawer'
+                edge='start'
                 onClick={handleDrawerToggle}
                 sx={{ mr: 2, display: { xs: 'block', sm: 'flex', xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}
               >
@@ -75,15 +74,15 @@ function DrawerAppBar(props) {
     
               {/* Logo centrado en pantallas pequeñas */}
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, justifyContent: 'center' }}>
-                <img src={logo} alt="Logo" style={{ maxWidth: '100px' }} />
+                <img src={logo} alt='Logo' style={{ maxWidth: '100px' }} />
               </Box>
     
               {/* Iconos de carrito y login a la derecha en pantallas pequeñas */}
               <Box sx={{ display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' }, ml: 'auto' }}>
-                <IconButton color="inherit">
+                <IconButton component={Link} to='/Cart' color='inherit'>
                   <ShoppingCartIcon />
                 </IconButton>
-                <IconButton color="inherit">
+                <IconButton color='inherit'>
                   <AccountCircleIcon />
                 </IconButton>
               </Box>
@@ -91,37 +90,39 @@ function DrawerAppBar(props) {
               
            {/* Logo pantallas grandes */}
               <Box sx={{ flexGrow: 0, display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, justifyContent: 'left', paddingLeft:5 }}>
-                <img src={logo} alt="Logo" style={{ maxWidth: '130px' }} />
+                <img src={logo} alt='Logo' style={{ maxWidth: '130px' }} />
               </Box>
               
                     
 
-          {/* Links de navegación centrados en pantallas grandes */}
+          {/* Links de navegación a páginas centrados en pantallas grandes */}
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, width: 0, flexGrow: 3, justifyContent: 'space-between', ml: 20, mr: 10 }}>
             {navItems.map((item) => (
               <Link key={item.name} to={item.path} style={{ textDecoration: 'none', margin: '0 10px' }}>
-                <Button sx={{ color: "#fff" }}>{item.name}</Button>
+                <Button sx={{ color: '#ffffff' }}>{item.name}</Button>
               </Link>
             ))}
           </Box>    
 
+
+          {/*carrito*/}
           <Box sx={{ display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex' }, ml: '30rem' }}>
-                <IconButton color="inherit" component={Link} to="/Cart">
+                <IconButton component={Link} to='/Cart' sx={{ color: '#FFFFFF', '&:hover': { color: '#435636' } }}>
                   <ShoppingCartIcon />
                 </IconButton>
               </Box>
-
+              
 
 
 
           {/* Botones de Login y Sign Up a la derecha en pantallas grandes */}
           <Box sx={{ flexGrow: 1, display: {xs: 'none', sm: 'none', md: 'flex', lg: 'flex', xl: 'flex'
  }, justifyContent: 'flex-end' }}>
-    <Link to="/login" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Login</Button>
+    <Link to='/login' style={{ textDecoration: 'none' }}>
+      <Button variant='contained' sx={{ backgroundColor: '#FFFFFF', color: '#637E51', '&:hover': { backgroundColor: '#556642', color: '#FFFFFF' } }}>Login</Button>
     </Link>
-    <Link to="/signup" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ marginLeft: 1, backgroundColor: "#FFFFFF", color: "#637E51", '&:hover': { backgroundColor: "#556642" } }}>Sign Up</Button>
+    <Link to='/signup' style={{ textDecoration: 'none' }}>
+      <Button variant='contained' sx={{ marginLeft: 1, backgroundColor: '#FFFFFF', color: '#637E51', '&:hover': { backgroundColor: '#556642', color: '#FFFFFF' } }}>Sign Up</Button>
     </Link>
   </Box>
         </Toolbar>
@@ -129,11 +130,11 @@ function DrawerAppBar(props) {
       <nav>
         <Drawer
           container={container}
-          variant="temporary"
+          variant='temporary'
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
@@ -148,10 +149,7 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+
   window: PropTypes.func,
 };
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -101,3 +102,12 @@ export default function Login() {
         </ThemeProvider>
       );    
  }
+=======
+const Login = () => {
+    return(
+      <>Login</>
+    );
+  }
+  
+  export default Login;
+>>>>>>> 181f4e2db459c44a2d85ca4ce813509c1a672ed3
