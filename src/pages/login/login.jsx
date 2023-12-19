@@ -38,6 +38,8 @@ export default function Login() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            paddingTop: 15,
+            paddingBottom: 15
           }}
         >
           <img src={Logo} width={"100px"} alt="logo" />
@@ -78,6 +80,7 @@ export default function Login() {
                 mb: 2,
                 backgroundColor: "#637E51",
                 color: "white",
+                '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }
               }}
             >
               Iniciar sesión

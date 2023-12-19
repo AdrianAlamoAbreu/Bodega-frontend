@@ -67,7 +67,7 @@ function DrawerAppBar(props) {
                 aria-label='open drawer'
                 edge='start'
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { xs: 'block', sm: 'flex', xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}
+                sx={{ mr: 2, display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none', xl: 'none' } }}
               >
                 <MenuIcon />
               </IconButton>
