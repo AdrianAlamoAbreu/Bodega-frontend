@@ -12,21 +12,37 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../../assets/icono_verde.png';
 // TODO remove, this demo shouldn't need to reset the theme.
 
-const defaultTheme = createTheme();
+import { signup } from '../../services/authServices.js'
 
-export default function signup() {
+const defaultTheme = createTheme();
+const navigate = useNavigate();
+
+export default function SignupCard() {
+  const [email, setEmail] = useState("");
+  const [user_name, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [number_phone, setNumberPhone] = useState("");
   const handleSubmit = async (event) => {
+    try{
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
     const credentials = {
-        user_name: data.get('user_name'),
-        email: data.get('email'),
-        password: data.get('password'),
-        number_phone: data.get('number_phone')
+        user_name: user_name,
+        email: email,
+        password: password,
+        number_phone: number_phone
       };
-      const res = await login(credentials)
+      const res = await signup(credentials)
+        if (result === 200) {
+          navigate('/perfil')
+        }
+      } catch (error) {
+        console.log(error)
+      }
     };
 
 
@@ -44,9 +60,7 @@ export default function signup() {
             paddingBottom: 15
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <img src={Logo} width={"100px"}></img>
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
@@ -61,6 +75,7 @@ export default function signup() {
                   id="user_name"
                   label="Nombre de usuario"
                   autoFocus
+                  onChange={(e) => setUserName(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -70,6 +85,7 @@ export default function signup() {
                   id="email"
                   label="Email"
                   name="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   //autoComplete="email"
                 />
               </Grid>
@@ -81,6 +97,7 @@ export default function signup() {
                   label="Contraseña"
                   type="password"
                   id="password"
+                  onChange={(e) => setPassword(e.target.value)}
                  // autoComplete="new-password"
                 />
               </Grid>
@@ -92,6 +109,7 @@ export default function signup() {
                   label="Repite la contraseña"
                   type="repeat_password"
                   id="repeat_password"
+                  onChange={(e) => setPassword(e.target.value)}
                  // autoComplete="new-password"
                 />
               </Grid>
@@ -102,11 +120,13 @@ export default function signup() {
                   id="number_phone"
                   label="Número de teléfono"
                   name="number_phone"
+                  onChange={(e) => setNumberPhone(e.target.value)}
                   //autoComplete="Número de teléfono"
                 />
               </Grid>
             </Grid>
             <Button
+              onClick={handleSubmit}
               type="submit"
               fullWidth
               variant="contained"

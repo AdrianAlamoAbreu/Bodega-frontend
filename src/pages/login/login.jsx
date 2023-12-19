@@ -12,12 +12,35 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { login, logout } from "../../services/authServices";
+import { login } from "../../services/authServices";
 import Logo from "../../assets/icono_verde.png";
+import { useNavigate } from "react-router-dom";
+
+
+function LoginCard() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+
+  const navigate = useNavigate()
+
+  const handleClick = async () => {
+    try {
+      const payload = {
+        email,
+        password
+      }
+      const result = await login(payload)
+      if (result === 200) {
+        navigate('/perfil')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 const defaultTheme = createTheme();
 
-export default function Login() {
+  /*function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -26,7 +49,7 @@ export default function Login() {
       password: data.get("password"),
     };
     const res = await login(credentials);
-  };
+  };*/
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -56,6 +79,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -66,12 +90,14 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={(e) => setPassword(e.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Recordarme"
             />
-            <Button
+            <Button 
+              onClick={handleClick}
               type="submit"
               fullWidth
               variant="contained"
@@ -103,3 +129,6 @@ export default function Login() {
     </ThemeProvider>
   );
 }
+
+export default LoginCard
+//}
