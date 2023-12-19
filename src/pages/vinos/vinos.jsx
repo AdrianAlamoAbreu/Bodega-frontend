@@ -64,11 +64,13 @@ const Vinos = () => {
       <Typography variant='h2' component='h1' className='vinos'>
         Nuestros Vinos
       </Typography>
+      <Grid sx= {{ paddingRight: 7}}>
       <ButtonGroup variant='contained' >
         <Button color='secondary' sx={{ backgroundColor: '#637E51', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }}} onClick={() => setTipoVino('todos')}>Todos</Button>
         <Button color='secondary' sx={{ backgroundColor: '#637E51', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }}} onClick={() => setTipoVino('blancos')}>Blancos</Button>
         <Button color='secondary' sx={{ backgroundColor: '#637E51', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }}} onClick={() => setTipoVino('tintos')}>Tintos</Button>
       </ButtonGroup>
+      </Grid>
       <Grid container spacing={2} sx={{ mt: 2, justifyContent: 'center' }}>
         {vinos[tipoVino].map((vino, index) => ( /*renderiza la lista de vinos*/
           <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
