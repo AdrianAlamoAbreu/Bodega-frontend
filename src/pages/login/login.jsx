@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useHistory } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,13 +13,14 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { login, logout } from "../../services/authServices";
+import { login } from "../../services/authServices";
 import Logo from "../../assets/icono_verde.png";
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme();
+
 export default function Login() {
+  const history = useHistory();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -26,7 +28,17 @@ export default function Login() {
       email: data.get("email"),
       password: data.get("password"),
     };
-    const res = await login(credentials);
+
+    try {
+      const res = await login(credentials);
+      if (res.success) {
+        history.push("/user"); 
+      } else {
+        console.error("Inicio de sesión fallido");
+      }
+    } catch (error) {
+      console.error("Error en el inicio de sesión", error);
+    }
   };
 
   return (
@@ -41,7 +53,7 @@ export default function Login() {
             alignItems: "center",
           }}
         >
-          <img src={Logo} width={"100px"}></img>
+          <img src={Logo} width={"100px"} alt="Logo"></img>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -87,17 +99,6 @@ export default function Login() {
               }}
             >
               Iniciar sesión
-            </Button>
-            <Button
-              fullWidth
-              variant="contained"
-              color="error"
-              onClick={logout}
-              sx={{
-                mt: 1,
-              }}
-            >
-              Cerrar sesión
             </Button>
             <Grid container>
               <Grid item xs>
