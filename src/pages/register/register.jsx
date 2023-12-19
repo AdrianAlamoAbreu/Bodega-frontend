@@ -40,6 +40,8 @@ export default function signup() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            paddingTop: 15,
+            paddingBottom: 15
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -113,6 +115,7 @@ export default function signup() {
                 mb: 2,
                 backgroundColor: '#637E51',
                 color: 'white',
+                '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51' }
               }}
             >
              Registrarse

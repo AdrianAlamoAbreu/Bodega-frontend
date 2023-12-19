@@ -7,6 +7,7 @@ import botellavino from '../../assets/botellavino.jpg'
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
+
 const About = () => {
   return (
         <Box className='about-container'>
