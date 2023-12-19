@@ -15,7 +15,6 @@ function App() {
       <SearchContext.Provider value={{ searchInput, setSearchInput }}>
         <RouterProvider router={config} />
       </SearchContext.Provider>
-
     </CartProvider>
   );
 }

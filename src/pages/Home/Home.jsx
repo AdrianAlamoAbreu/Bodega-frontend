@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
 
-        <Box sx={{paddingTop: 14}}>
+        <Box sx={{paddingTop: 10}}>
           <img src={viñedo} alt="Viñedo" className="responsive-img" />
         <Box>
           <Typography variant='h2' component='h1' className='home'>

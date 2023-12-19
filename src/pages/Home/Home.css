@@ -27,6 +27,8 @@
   .home {
     text-align: center;
     padding-bottom: 4rem;
+    padding-right: 2rem;
+    padding-left: 1rem;
     
   }
 
@@ -37,4 +39,8 @@
     padding-left: 2rem;
     padding-right: 4rem;
     font-size: 1.1rem !important;
+  }
+
+  .about-container {
+    padding: 20px;
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grid, Typography, Button } from '@mui/material';
-import { MasonryImageList } from '../../components/bodegascomponents/BodegasComponents';
+import { MasonryImageList } from '../../components/BodegasComponents';
 import bodega1 from '../../assets/bodega1.png'; 
 import bodega2 from '../../assets/bodega2.png';
 import bodega3 from '../../assets/bodega3.png';
