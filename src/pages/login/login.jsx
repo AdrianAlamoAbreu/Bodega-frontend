@@ -33,7 +33,7 @@ function LoginCard() {
       }
       const result = await login(payload)
       if (result === 200) {
-        navigate('/perfil')
+        navigate('/')
       }
     } catch (error) {
       console.log(error)
