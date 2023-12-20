@@ -17,13 +17,12 @@ import { getOwnProfile } from '../../services/getService'
     };
     fetchData();
   }, []);
-console.log(user)
+
       return (
         <div>
           {Object.keys(user).length !== 0 ? (
             <>
-            <h1>testing testing</h1>
-              {/* <h3>
+               <h3>
                 <strong>Nombre:</strong> {user.user_name}
               </h3>
               <p>
@@ -31,13 +30,13 @@ console.log(user)
               </p>
               <p>
                <strong>Teléfono:</strong> {user.number_phone}
-              </p> */}
+              </p> 
             </>
           ) : (
             <h1>Cargando</h1>
           )}
 
-          {/* {Object.keys(user).length !== 0 ? (
+          {Object.keys(user).length !== 0 ? (
             <>
               <h3>
                 <strong>Fecha:</strong> {user.fecha}
@@ -70,7 +69,7 @@ console.log(user)
             </>
           ) : (
             <h1>Cargando</h1>
-          )} */}
+          )}
         </div>
       );
     };

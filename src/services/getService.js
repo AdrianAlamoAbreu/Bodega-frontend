@@ -21,7 +21,7 @@ const getAllUsers = async () => {
         authorization: localStorage.getItem('token')
       }
     })
-    return data.posts
+    return data
   } catch (error) {
     console.error(error)
   }
@@ -34,7 +34,7 @@ const getAnUser = async (id) => {
           authorization: localStorage.getItem('token')
         }
       })
-      return data.posts
+      return data
     } catch (error) {
       console.error(error)
     }
@@ -47,7 +47,7 @@ const getAllWines = async (id) => {
             authorization: localStorage.getItem('token')
           }
         })
-        return data.posts
+        return data
       } catch (error) {
         console.error(error)
       }
@@ -60,7 +60,7 @@ const getWine = async (id) => {
             authorization: localStorage.getItem('token')
           }
         })
-        return data.posts
+        return data
       } catch (error) {
         console.error(error)
       }
@@ -73,7 +73,7 @@ const getAllTours = async () => {
              authorization: localStorage.getItem('token')
            }
       })
-         return data.posts
+         return data
         } catch (error) {
           console.error(error)
         }
@@ -86,7 +86,7 @@ const getATour = async (id) => {
               authorization: localStorage.getItem('token')
              }
       })
-         return data.posts
+         return data
           } catch (error) {
             console.error(error)
         }
@@ -98,7 +98,7 @@ const getOwnTour = async (id) => {
                 authorization: localStorage.getItem('token')
                 }
         })
-            return data.posts
+            return data
             } catch (error) {
             console.error(error)
         }
@@ -111,7 +111,7 @@ const getAllOrders = async (id) => {
        authorization: localStorage.getItem('token')
         }
       })
-         return data.posts
+         return data
          } catch (error) {
           console.error(error)
        }
