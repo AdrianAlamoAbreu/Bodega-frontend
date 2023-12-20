@@ -3,7 +3,7 @@ import app from './config'
 
 const getOwnProfile = async () => {
   try {
-    const { data } = await app.get('/profile', {
+    const { data } = await app.get('/user/profile', {
       headers: {
         authorization: localStorage.getItem('token')
       }
