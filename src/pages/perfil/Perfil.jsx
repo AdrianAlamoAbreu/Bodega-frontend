@@ -33,7 +33,7 @@ import { getOwnProfile } from '../../services/getService'
             <h1>Cargando</h1>
           )}
 
-          {Object.keys(user.pedidos).length !== 0 ? (
+          {/* {Object.keys(user.pedidos).length !== 0 ? (
             <>
               <h3>
                 <strong>Fecha:</strong> {user.pedidos.fecha}
@@ -50,7 +50,7 @@ import { getOwnProfile } from '../../services/getService'
             </>
           ) : (
             <h1>Cargando</h1>
-          )}
+          )} */}
 
           {/* {Object.keys(user.reserva).length !== 0 ? (
             <>
