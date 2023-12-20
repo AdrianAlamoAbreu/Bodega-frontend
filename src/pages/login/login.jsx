@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 
+
 function LoginCard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("")
@@ -70,7 +71,7 @@ const defaultTheme = createTheme();
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
