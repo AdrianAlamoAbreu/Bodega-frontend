@@ -17,20 +17,21 @@ import { getOwnProfile } from '../../services/getService'
     };
     fetchData();
   }, []);
-
+console.log(user)
       return (
         <div>
           {Object.keys(user).length !== 0 ? (
             <>
-              <h3>
+            <h1>testing testing</h1>
+              {/* <h3>
                 <strong>Nombre:</strong> {user.user_name}
               </h3>
               <p>
                 <strong>Email:</strong> {user.email}
               </p>
               <p>
-                <strong>Teléfono:</strong> {user.number_phone}
-              </p>
+               <strong>Teléfono:</strong> {user.number_phone}
+              </p> */}
             </>
           ) : (
             <h1>Cargando</h1>
