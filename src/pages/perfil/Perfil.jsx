@@ -10,7 +10,7 @@ import { getOwnProfile } from '../../services/getService'
     const fetchData = async () => {
       try {
         const result = await getOwnProfile();
-        setUser(result);
+        setUser(result.user);
       } catch (error) {
         console.error('Error al obtener datos del usuario:', error);
       }
