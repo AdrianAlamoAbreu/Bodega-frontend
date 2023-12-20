@@ -100,7 +100,7 @@ const defaultTheme = createTheme();
             />
             <Button 
               onClick={handleClick}
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               sx={{
