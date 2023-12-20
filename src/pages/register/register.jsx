@@ -36,7 +36,7 @@ export default function SignupCard() {
         number_phone: number_phone
       };
       const res = await signup(credentials)
-        if (result === 200) {
+        if (res === 200) {
           navigate('/perfil')
         }
       } catch (error) {
