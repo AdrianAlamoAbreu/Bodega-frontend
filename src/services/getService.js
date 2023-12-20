@@ -8,7 +8,7 @@ const getOwnProfile = async () => {
         authorization: localStorage.getItem('token')
       }
     })
-    return data.posts
+    return data
   } catch (error) {
     console.error(error)
   }
