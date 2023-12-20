@@ -28,43 +28,40 @@ import { getOwnProfile } from '../../services/getService'
               <p>
                 <strong>Email:</strong> {user.email}
               </p>
-              <p>
-               <strong>Teléfono:</strong> {user.number_phone}
-              </p> 
             </>
           ) : (
             <h1>Cargando</h1>
           )}
 
-          {Object.keys(user).length !== 0 ? (
+          {Object.keys(user.pedidos).length !== 0 ? (
             <>
               <h3>
-                <strong>Fecha:</strong> {user.fecha}
+                <strong>Fecha:</strong> {user.pedidos.fecha}
               </h3>
               <p>
-                <strong>Franja horaria:</strong> {user.franja_horaria}
+                <strong>Franja horaria:</strong> {user.pedidos.franja_horaria}
               </p>
               <p>
-                <strong>Nº de asistentes:</strong> {user.reservado_personas}
+                <strong>Nº de asistentes:</strong> {user.pedidos.reservado_personas}
               </p>
               <p>
-                <strong>Bodega:</strong> {user.id_bodega}
+                <strong>Bodega:</strong> {user.pedidos.id_bodega}
               </p>
             </>
           ) : (
             <h1>Cargando</h1>
           )}
 
-          {Object.keys(user).length !== 0 ? (
+          {Object.keys(user.reserva).length !== 0 ? (
             <>
               <h3>
-                <strong>Fecha de pedido:</strong> {user.fecha}
+                <strong>Fecha de pedido:</strong> {user.reserva.fecha}
               </h3>
               <p>
-                <strong>Total:</strong> {user.total}
+                <strong>Total:</strong> {user.reserva.total}
               </p>
               <p>
-                <strong>Dirección de envío:</strong> {user.direccion_envio}
+                <strong>Dirección de envío:</strong> {user.reserva.direccion_envio}
               </p>
             </>
           ) : (
