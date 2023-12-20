@@ -117,6 +117,19 @@ const getAllOrders = async (id) => {
        }
   } 
 
+  const createOrder = async () => {
+    try {
+      const { data } = await app.post('/pedidos', {
+        headers: {
+          authorization: localStorage.getItem('token')
+        }
+      })
+      return data
+    } catch (error) {
+      console.error(error)
+   }
+  }
+
 
 export {
   getOwnProfile,
@@ -128,7 +141,5 @@ export {
   getATour,
   getOwnTour,
   getAllOrders,
-
-
-  
+  createOrder  
 }

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const app = axios.create({
-  baseURL: "http://localhost:5173/api",
+  baseURL: "https://bodega-backend-production.up.railway.app/api",
 });
 
 export default app

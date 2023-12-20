@@ -7,12 +7,20 @@ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Link } from 'react-router-dom';
 import './Cart.css';
+import { createOrder } from '../../services/getService';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cart, removerCarrito, actualizarCantidad } = useCart();
   const subtotal = cart.reduce((acumulado, item) => acumulado + (item.cantidad * (item.precio || 0)), 0); /*Se calcula el subtotal sumando el precio de cada ítem multiplicado por su cantidad. Se utiliza item.precio || 0 por si item.precio es undefined, se use 0.*/
   const transporte = 7; 
   const total = subtotal + transporte;
+  const navigate = useNavigate();
+
+  async function sendOrder () {
+    const response = await createOrder(cart);
+    navigate('/perfil');
+  }
 
 
   return (
@@ -70,7 +78,8 @@ const Cart = () => {
             <Typography>Artículos: {subtotal.toFixed(2)} €</Typography>
             <Typography>Gastos de envío: {transporte.toFixed(2)} €</Typography>
             <Typography>Total (impuestos inc.): {total.toFixed(2)} €</Typography>
-            <Button variant='contained' sx={{ width: '100%', marginTop: 2, backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51'  } }}>
+            <Button variant='contained' sx={{ width: '100%', marginTop: 2, backgroundColor: '#637E51', color: '#FFFFFF', '&:hover': { backgroundColor: '#F8FFFB', color: '#637E51'  } }}
+              onClick={sendOrder}>
               Finalizar Compra
             </Button>
           </Card>

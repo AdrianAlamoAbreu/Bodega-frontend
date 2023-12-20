@@ -19,10 +19,9 @@ import Logo from '../../assets/icono_verde.png';
 
 import { signup } from '../../services/authServices.js'
 
-const defaultTheme = createTheme();
-const navigate = useNavigate();
-
 export default function SignupCard() {
+  const defaultTheme = createTheme();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [user_name, setUserName] = useState("");
   const [password, setPassword] = useState("");

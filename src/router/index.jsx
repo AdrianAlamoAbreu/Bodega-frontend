@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home/Home.jsx";
 import About from "../pages/About/About.jsx";
-import Users from "../pages/Users.jsx";
 import Root from "../layout/index.jsx";
 import Vinos from "../pages/vinos/vinos.jsx";
 import Adminpage from "../pages/adminpage.jsx";
@@ -10,6 +9,7 @@ import Login from "../pages/login/login.jsx";
 import Bodegas from "../pages/bodegas/Bodegas.jsx";
 import Cart from "../pages/Cart/Cart.jsx";
 import Signup from "../pages/register/register.jsx";
+import Perfil from "../pages/perfil/Perfil.jsx";
 
 
 const router = createBrowserRouter([
@@ -24,10 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      },
-      {
-        path: '/users',
-        element: <Users />
       },
       {
         path: '/vinos',
@@ -57,6 +53,10 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />
       },
+      {
+        path: '/perfil',
+        element: <Perfil /> 
+      }
     ],
   },
 ]);
