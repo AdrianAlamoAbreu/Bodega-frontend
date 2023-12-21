@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
+import './Perfil.css';
 
 import { getOwnProfile } from '../../services/getService'
 
