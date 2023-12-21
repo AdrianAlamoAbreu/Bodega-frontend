@@ -19,7 +19,7 @@ import { getOwnProfile } from '../../services/getService'
   }, []);
 
       return (
-        <div>
+        <div className="container">
           {Object.keys(user).length !== 0 ? (
             <>
                <h3>
@@ -28,45 +28,47 @@ import { getOwnProfile } from '../../services/getService'
               <p>
                 <strong>Email:</strong> {user.email}
               </p>
+              <p>
+                <strong>Nº de teléfono:</strong> 655-55-55-55
+              </p>
+              <p>
+                <strong>Dirección:</strong> Calle Falsa, 123.
+              </p>
             </>
           ) : (
             <h1>Cargando</h1>
           )}
-
-          {/* {Object.keys(user.pedidos).length !== 0 ? (
             <>
               <h3>
-                <strong>Fecha:</strong> {user.pedidos.fecha}
+                Reservas
+              </h3>
+              <h3>
+                <strong>Fecha:</strong> 24/12/2023
               </h3>
               <p>
-                <strong>Franja horaria:</strong> {user.pedidos.franja_horaria}
+                <strong>Franja horaria:</strong> 14:00-15:00
               </p>
               <p>
-                <strong>Nº de asistentes:</strong> {user.pedidos.reservado_personas}
+                <strong>Nº de asistentes:</strong> 4 Personas
               </p>
               <p>
-                <strong>Bodega:</strong> {user.pedidos.id_bodega}
+                <strong>Bodega:</strong> Bodega Sur
               </p>
-            </>
-          ) : (
-            <h1>Cargando</h1>
-          )} */}
-
-          {/* {Object.keys(user.reserva).length !== 0 ? (
+            </> 
             <>
               <h3>
-                <strong>Fecha de pedido:</strong> {user.reserva.fecha}
+                Pedidos
+              </h3>
+              <h3>
+                <strong>Fecha de pedido:</strong> 21/12/2023
               </h3>
               <p>
-                <strong>Total:</strong> {user.reserva.total}
+                <strong>Total:</strong> 37,00€
               </p>
               <p>
-                <strong>Dirección de envío:</strong> {user.reserva.direccion_envio}
+                <strong>Dirección de envío:</strong> Calle Falsa, 123
               </p>
             </>
-          ) : (
-            <h1>Cargando</h1>
-          )} */}
         </div>
       );
     };
